@@ -17,18 +17,4 @@ spec:
       containers:
       - name: shop
         image: zuiweng518/shop:v2.0
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: shop
-  namespace: shop
-spec:
-  selector:
-    app: shop
-  type: NodePort
-  ports:
-    - port: 8080
-      targetPort: 8080
-      name: master
-      nodePort: 32000
+
