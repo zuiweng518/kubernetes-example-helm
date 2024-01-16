@@ -23,7 +23,7 @@ kind: Service
 metadata:
   name: shop
   namespace: shop
- spec:
+spec:
   selector:
     app: shop
   type: NodePort
