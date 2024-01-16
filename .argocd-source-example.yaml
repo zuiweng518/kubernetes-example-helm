@@ -1,8 +1,0 @@
-helm:
-  parameters:
-  - name: frontend.image
-    value: chengzh/frontend
-    forcestring: true
-  - name: frontend.tag
-    value: main-983257b
-    forcestring: true
