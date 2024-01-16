@@ -3,15 +3,12 @@ kind: Deployment
 metadata:
   name: shop
   namespace: shop
+  labels:
+    app: shop
 spec:
      replicas: 1
      selector: 
        matchLabels:
-         labels:
-            app: shop
-     template:
-       metadata:
-         labels:
           app: shop
        spec:
          containers:
