@@ -1,20 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shop-deployment
+  name: eshop-deployment
   labels:
-    app: shop
+    app: eshop
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: shop
+      app: eshop
   template:
     metadata:
       labels:
-        app: shop
+        app: eshop
     spec:
       containers:
-      - name: shop
+      - name: eshop
         image: zuiweng518/shop:v2.0
-
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eshop
+  namespace: shop
+spec:
+  selector:
+    app: eshop
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      name: master
+      nodePort: 32000
